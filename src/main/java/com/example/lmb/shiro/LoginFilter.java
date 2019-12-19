@@ -16,7 +16,6 @@ import javax.servlet.ServletResponse;
 public class LoginFilter extends AccessControlFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
-        System.out.println("loginfilter ------");
         Object principal = SecurityUtils.getSubject().getPrincipal();
 
         return true;

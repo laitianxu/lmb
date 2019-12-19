@@ -1,4 +1,4 @@
-package com.example.lmb.pojo;
+package com.example.lmb.pojo.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,23 +6,14 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-/**
- * @program: lmb
- * @description:
- * @author: ltx
- * @create: 2019-12-19 10:08
- **/
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserVo {
 
-    private Integer id;
+    private long id;
     private String mobilePhone;
-    private String pwd;
     private String regName;
     private LocalDateTime regTime;
-    private Integer leaveAmount;
-
+    private long leaveAmount;
 }

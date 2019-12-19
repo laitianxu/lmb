@@ -35,6 +35,7 @@ public class ShiroConfig {
         // 设置拦截器
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/login", "anon");
+        filterChainDefinitionMap.put("/register", "anon");
         filterChainDefinitionMap.put("/**", "login");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;

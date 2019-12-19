@@ -13,7 +13,7 @@ import org.apache.shiro.util.ByteSource;
 public class Test {
     @org.junit.jupiter.api.Test
     public void test() {
-        Md5Hash md5Hash = Md5Hash.fromHexString("123456");
-        System.out.println(md5Hash.toHex());
+        String s = new Md5Hash("123456", null, 1).toHex();
+        System.out.println(s);
     }
 }
