@@ -1,7 +1,5 @@
 package com.example.lmb.shiro;
 
-import com.example.lmb.shiro.LoginFilter;
-import com.example.lmb.shiro.MyRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -29,14 +27,21 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
         HashMap<String, Filter> filters = new HashMap<>();
-        filters.put("login", new LoginFilter());
+        filters.put("ajax", new AjaxFilter());
         shiroFilterFactoryBean.setFilters(filters);
 
         // 设置拦截器
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/register", "anon");
-        filterChainDefinitionMap.put("/**", "login");
+
+//       释放掉swagger
+        filterChainDefinitionMap.put("/swagger-ui.html**", "anon");
+        filterChainDefinitionMap.put("/webjars/**", "anon");
+        filterChainDefinitionMap.put("/swagger-resources/**", "anon");
+        filterChainDefinitionMap.put("/v2/**", "anon");
+
+        filterChainDefinitionMap.put("/**", "ajax");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

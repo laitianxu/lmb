@@ -34,8 +34,8 @@ public class UserService {
 
         String pwd = new Md5Hash(vo.getPwd(), null, 1).toHex();
         user = new User(null, vo.getMobilePhone(), pwd, vo.getRegName(), LocalDateTime.now(), 0);
-        int id = userMapper.insert(user);
-        return new RegVo(id,vo.getMobilePhone(),vo.getRegName());
+        userMapper.insert(user);
+        return new RegVo(user.getId(),vo.getMobilePhone(),vo.getRegName());
     }
 
     public UserVo rechargeOrwithdraw(InrechargeVo vo,int flag) throws NotSufficientFundsException {

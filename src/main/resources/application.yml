@@ -50,3 +50,24 @@ spring:
 logging:
   level:
     com.example.lmb.mapper: debug
+#  swagger.enabled=true
+#  swagger.title=spring-data-jpa module
+#  swagger.description=Starter for swagger 2.x
+#  swagger.license=Apache License, Version 2.0
+#  swagger.licenseUrl=https://www.apache.org/licenses/LICENSE-2.0.html
+#  swagger.termsOfServiceUrl=https://github.com/dyc87112/spring-boot-starter-swagger
+#  swagger.contact.name=mqXu
+#  swagger.contact.url=https://www.jianshu.com/u/822585e5c69a
+#  swagger.contact.email=moqi1977@gmail.com
+#  swagger.base-package=com.springboot.mybatis.controller
+#  swagger.base-path=/**
+#  swagger.exclude-path=/error, /ops/**
+swagger:
+  enabled: true
+  base-package: com.example.lmb.controller
+  title: 往事不会说谎
+  contact:
+    name: ltx
+    email: 936635109@qq.com
+  description: 凭什么要失望 藏眼泪到心脏 往事不会说谎 别跟它为难 我们两人之间不需要这样 我想 修炼爱情的心酸 学会放好以前的渴望 我们那些信仰 要忘记多难
+
