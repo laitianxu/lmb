@@ -32,6 +32,7 @@ public class UserService {
         user = userMapper.selectOne(wrapper);
         if (user != null) throw new RegNameExistException();
 
+
         String pwd = new Md5Hash(vo.getPwd(), null, 1).toHex();
         user = new User(null, vo.getMobilePhone(), pwd, vo.getRegName(), LocalDateTime.now(), 0);
         userMapper.insert(user);
